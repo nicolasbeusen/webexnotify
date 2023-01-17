@@ -35,7 +35,7 @@ func main() {
 		webexMessage = scanner.Text()
 
 		message := &webexteams.MessageCreateRequest{
-			Text:          strings.Replace(messageTemplate, "{{ data }}", webexMessage, -1),
+			Text:          strings.Replace(messageTemplate, "###data###", webexMessage, -1),
 			ToPersonEmail: ToPersonEmail,
 		}
 		newTextMessage, _, err := Client.Messages.CreateMessage(message)
